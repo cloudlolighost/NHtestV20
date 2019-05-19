@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">NHtestV1.0</string>
+    <string name="title">用藥小幫手</string>
+    <string name="check">TODO</string>
+    <string name="clock">TODO</string>
+    <string name="list">TODO</string>
+    <string name="qrcode">TODO</string>
+    <string name="str_title1">只響一次的鬧鐘</string>
+    <string name="str_title2">重複響起的鬧鐘</string>
+    <string name="str_button1">設定鬧鐘</string>
+    <string name="str_button2">移除鬧鐘</string>
+    <string name="str_default">目前無鬧鐘</string>
+    <string name="_10">10</string>
+    <string name="str_text1" />
+    <string name="str_text2" />
+    <string name="str_text3" />
+    <string name="refresh">refresh</string>
+    <string name="settings">settings</string>
+    <string name="todo">TODO</string>
+    <string name="delete">刪除</string>
+    <string name="fix">修改</string>
+    <string name="add">新增</string>
+
+
+</resources>
