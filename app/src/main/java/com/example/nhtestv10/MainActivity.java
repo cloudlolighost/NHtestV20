@@ -48,10 +48,6 @@ public class MainActivity extends AppCompatActivity {
         int vWidth = displayMetricss.widthPixels;
         int vHeight = displayMetricss.heightPixels;
 
-        //FrameLayout ll = (FrameLayout)FrameLayout.(R.id.FrameLayout);
-        //ll.getLayoutParams().width=(int)(vWidth*0.9);
-
-
         ImageButton ClockPageBtn = findViewById(R.id.clock);
         ImageButton ListPageBtn = findViewById(R.id.list);
         ImageButton CheckPageBtn = findViewById(R.id.check);

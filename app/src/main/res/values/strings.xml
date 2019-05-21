@@ -5,9 +5,8 @@
     <string name="clock">TODO</string>
     <string name="list">TODO</string>
     <string name="qrcode">TODO</string>
-    <string name="str_title1">只響一次的鬧鐘</string>
-    <string name="str_title2">重複響起的鬧鐘</string>
-    <string name="str_button1">設定鬧鐘</string>
+    <string name="str_title1">設置鬧鐘</string>
+    <string name="str_button1">新增鬧鐘</string>
     <string name="str_button2">移除鬧鐘</string>
     <string name="str_default">目前無鬧鐘</string>
     <string name="_10">10</string>
