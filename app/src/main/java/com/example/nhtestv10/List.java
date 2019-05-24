@@ -1,5 +1,6 @@
 package com.example.nhtestv10;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -18,12 +19,10 @@ public class List extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
-            case R.id.action_refresh: //點了重新整理
-                //loadData();
-                return true;
-            case R.id.action_settings: //點了settings
-                Log.d("item","click settings");
-                return true;
+            case R.id.action_home:
+                Intent intent = new Intent();
+                intent.setClass(List.this , MainActivity.class);
+                startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
