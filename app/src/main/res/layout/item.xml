@@ -3,7 +3,8 @@
     android:orientation="vertical"
     android:layout_margin="10dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/rectangle">
 
     <ImageView
         android:id="@+id/info_img"
@@ -13,7 +14,7 @@
         android:layout_centerVertical="true"
         android:layout_marginStart="3dp"
         android:contentDescription="@string/todo"
-        android:src="@drawable/iconfinder_clock_322431" />
+        android:src="@drawable/iconfinder_Capsule_2415607" />
 
     <TextView
         android:id="@+id/info_text"

@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".list001"></activity>
+        <activity android:name=".medicineselection"></activity>
+        <activity android:name=".list001" />
         <activity android:name=".ClockRecyclerView" />
         <activity android:name=".clocklist" />
         <activity
