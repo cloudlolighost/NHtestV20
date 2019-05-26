@@ -26,6 +26,12 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class clock extends AppCompatActivity {
     private TextView setTime1, setTime2,setTime3,setTime4;
     private Button mButton1, mButton2, mButton3, mButton4,mButton5,mButton6,mButton7,mButton8;
@@ -89,6 +95,11 @@ public class clock extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference myRef = database.getReference();
+
+
+
         // 只響一次鬧钟設置
         setTime1 = (TextView) findViewById(R.id.setTime1);
         setTime2 = (TextView) findViewById(R.id.setTime2);
@@ -103,26 +114,43 @@ public class clock extends AppCompatActivity {
         mButton7 = (Button) findViewById(R.id.mButton7);
         mButton8 = (Button) findViewById(R.id.mButton8);
 
-        /*String tmpS1 = format(str1) + ":"
-                + format(str2);
-        setTime1.setText(tmpS1);
-        String tmpS2 = format(str1) + ":"
-                + format(str2);
-        setTime2.setText(tmpS2);
-        String tmpS3 = format(str1) + ":"
-                + format(str2);
-        setTime3.setText(tmpS3);
-        String tmpS4 = format(str1) + ":"
-                + format(str2);
-        setTime4.setText(tmpS4);*/
+        // Read from the database
+        DatabaseReference load=myRef.child("Member");
+        load.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String loadclock1=dataSnapshot.child("clock1").child("hour").getValue().toString()+":"+dataSnapshot.child("clock1").child("minute").getValue().toString();
+                String loadclock2=dataSnapshot.child("clock2").child("hour").getValue().toString()+":"+dataSnapshot.child("clock2").child("minute").getValue().toString();
+                String loadclock3=dataSnapshot.child("clock3").child("hour").getValue().toString()+":"+dataSnapshot.child("clock3").child("minute").getValue().toString();
+                String loadclock4=dataSnapshot.child("clock4").child("hour").getValue().toString()+":"+dataSnapshot.child("clock4").child("minute").getValue().toString();
+                if (loadclock1.equals("0:0")){
+                    setTime1.setText("目前無設置！");
+                }
+                else{setTime1.setText(loadclock1);}
+                if (loadclock2.equals("0:0")){
+                    setTime2.setText("目前無設置！");
+                }
+                else{setTime2.setText(loadclock2);}
+                if (loadclock3.equals("0:0")){
+                    setTime3.setText("目前無設置！");
+                }
+                else{setTime3.setText(loadclock3);}
+                if (loadclock4.equals("0:0")){
+                    setTime4.setText("目前無設置！");
+                }
+                else{setTime4.setText(loadclock4);}
 
 
+            }
 
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
 
-
-        /*db = new MyDB(this); // 建立 MyDB 物件
-        db.open();
-        cursor = db.getAll();// 載入全部資料*/
+            }
+        });
 
 
         mButton1.setOnClickListener(new View.OnClickListener() {
@@ -169,11 +197,13 @@ public class clock extends AppCompatActivity {
                                 // 更新顯示的設置鬧钟時間
                                 //str1=hourOfDay;
                                 //str2=minute;
+                                myRef.child("Member").child("clock1").child("hour").setValue(hourOfDay);
+                                myRef.child("Member").child("clock1").child("minute").setValue(minute);
                                 String tmpS = format(hourOfDay) + ":"
                                         + format(minute);
                                 setTime1.setText(tmpS);
                                 Toast.makeText(clock.this,
-                                        "設置的鬧钟時間为：" + tmpS, Toast.LENGTH_LONG)
+                                        "設置的鬧鐘時間為：" + tmpS, Toast.LENGTH_LONG)
                                         .show();
                             }
                         }, mHour, mMinute, false).show();
@@ -191,8 +221,10 @@ public class clock extends AppCompatActivity {
                 AlarmManager am;
                 am = (AlarmManager) getSystemService(ALARM_SERVICE);
                 am.cancel(sender);
-                Toast.makeText(clock.this, "鬧钟已刪除！",
+                Toast.makeText(clock.this, "鬧鐘已刪除！",
                         Toast.LENGTH_LONG).show();
+                myRef.child("Member").child("clock1").child("hour").setValue(0);
+                myRef.child("Member").child("clock1").child("minute").setValue(0);
                 setTime1.setText("目前無設置！");
             }
         });
@@ -240,11 +272,13 @@ public class clock extends AppCompatActivity {
                                 // 更新顯示的設置鬧钟時間
                                 //str3=hourOfDay;
                                 //str4=minute;
+                                myRef.child("Member").child("clock2").child("hour").setValue(hourOfDay);
+                                myRef.child("Member").child("clock2").child("minute").setValue(minute);
                                 String tmpS = format(hourOfDay) + ":"
                                         + format(minute);
                                 setTime2.setText(tmpS);
                                 Toast.makeText(clock.this,
-                                        "設置的鬧钟時間为：" + tmpS, Toast.LENGTH_LONG)
+                                        "設置的鬧鐘時間為：" + tmpS, Toast.LENGTH_LONG)
                                         .show();
                             }
                         }, mHour, mMinute, false).show();
@@ -262,9 +296,11 @@ public class clock extends AppCompatActivity {
                 AlarmManager am;
                 am = (AlarmManager) getSystemService(ALARM_SERVICE);
                 am.cancel(sender);
-                Toast.makeText(clock.this, "鬧钟已刪除！",
+                Toast.makeText(clock.this, "鬧鐘已刪除！",
                         Toast.LENGTH_LONG).show();
                 setTime2.setText("目前無設置！");
+                myRef.child("Member").child("clock2").child("hour").setValue(0);
+                myRef.child("Member").child("clock2").child("minute").setValue(0);
             }
         });
         mButton5.setOnClickListener(new View.OnClickListener() {
@@ -311,11 +347,13 @@ public class clock extends AppCompatActivity {
                                 // 更新顯示的設置鬧钟時間
                                 //str5=hourOfDay;
                                 //str6=minute;
+                                myRef.child("Member").child("clock3").child("hour").setValue(hourOfDay);
+                                myRef.child("Member").child("clock3").child("minute").setValue(minute);
                                 String tmpS = format(hourOfDay) + ":"
                                         + format(minute);
                                 setTime3.setText(tmpS);
                                 Toast.makeText(clock.this,
-                                        "設置的鬧钟時間为：" + tmpS, Toast.LENGTH_LONG)
+                                        "設置的鬧鐘時間為：" + tmpS, Toast.LENGTH_LONG)
                                         .show();
                             }
                         }, mHour, mMinute, false).show();
@@ -333,9 +371,11 @@ public class clock extends AppCompatActivity {
                 AlarmManager am;
                 am = (AlarmManager) getSystemService(ALARM_SERVICE);
                 am.cancel(sender);
-                Toast.makeText(clock.this, "鬧钟已刪除！",
+                Toast.makeText(clock.this, "鬧鐘已刪除！",
                         Toast.LENGTH_LONG).show();
                 setTime3.setText("目前無設置！");
+                myRef.child("Member").child("clock3").child("hour").setValue(0);
+                myRef.child("Member").child("clock3").child("minute").setValue(0);
             }
         });
         mButton7.setOnClickListener(new View.OnClickListener() {
@@ -382,11 +422,13 @@ public class clock extends AppCompatActivity {
                                 // 更新顯示的設置鬧钟時間
                                 //str7=hourOfDay;
                                 //str8=minute;
+                                myRef.child("Member").child("clock4").child("hour").setValue(hourOfDay);
+                                myRef.child("Member").child("clock4").child("minute").setValue(minute);
                                 String tmpS = format(hourOfDay) + ":"
                                         + format(minute);
                                 setTime4.setText(tmpS);
                                 Toast.makeText(clock.this,
-                                        "設置的鬧钟時間为：" + tmpS, Toast.LENGTH_LONG)
+                                        "設置的鬧鐘時間為：" + tmpS, Toast.LENGTH_LONG)
                                         .show();
                             }
                         }, mHour, mMinute, false).show();
@@ -404,9 +446,11 @@ public class clock extends AppCompatActivity {
                 AlarmManager am;
                 am = (AlarmManager) getSystemService(ALARM_SERVICE);
                 am.cancel(sender);
-                Toast.makeText(clock.this, "鬧钟已刪除！",
+                Toast.makeText(clock.this, "鬧鐘已刪除！",
                         Toast.LENGTH_LONG).show();
                 setTime4.setText("目前無設置！");
+                myRef.child("Member").child("clock4").child("hour").setValue(0);
+                myRef.child("Member").child("clock4").child("minute").setValue(0);
             }
         });
 
