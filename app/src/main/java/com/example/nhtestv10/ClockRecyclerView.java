@@ -27,7 +27,7 @@ public class ClockRecyclerView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clock_recycler_view);
         ArrayList<String> myDataset = new ArrayList<>();
-        for(int i = 0; i < 100; i++){
+        for(int i = 0; i < 10; i++){
             myDataset.add(Integer.toString(i));
         }
         mAdapter = new MyAdapter(myDataset);
@@ -96,14 +96,7 @@ public class ClockRecyclerView extends AppCompatActivity {
         public int getItemCount() {
             return mData.size();
         }
-        private String format(int x) {
-            // TODO Auto-generated method stub
-            String s = "" + x;
-            if (s.length() == 1) {
-                s = "0" + s;
-            }
-            return s;
-        }
+
     }
 
 }

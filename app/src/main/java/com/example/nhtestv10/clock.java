@@ -41,35 +41,6 @@ public class clock extends AppCompatActivity {
     private Calendar b = Calendar.getInstance();
 
 
-/*    SharedPreferences clock1 = getSharedPreferences("clock1", 0);
-    Integer str1 = clock1.getInt("hour",0);
-    Integer str2 = clock1.getInt("minute",0);
-    SharedPreferences clock2= getSharedPreferences("clock2", 0);
-    Integer str3 = clock2.getInt("hour",0);
-    Integer str4 = clock2.getInt("minute",0);
-    SharedPreferences clock3 = getSharedPreferences("clock3", 0);
-    Integer str5 = clock3.getInt("hour",0);
-    Integer str6 = clock3.getInt("minute",0);
-    SharedPreferences clock4= getSharedPreferences("clock4", 0);
-    Integer str7 = clock4.getInt("hour",0);
-    Integer str8 = clock4.getInt("minute",0);*/
-
-
-
-
-
-
-
-    /* 自建的資料庫類別 */
-    /*private MyDB db = null;*/
-
-    /* 資料表欄位 */
-// private final static String _ID = "_id";
-// private final static String NAME = "name";
-// private final static String PRICE = "price";
-    /*Cursor cursor;
-    long myid; // 儲存 _id 的值*/
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -460,30 +431,6 @@ public class clock extends AppCompatActivity {
     protected void onStop(){
         super.onStop();
 
-        /*SharedPreferences clock1 = getSharedPreferences("clock1", 0);
-        SharedPreferences.Editor editor = clock1.edit();
-
-        editor.putInt("hour",str1);
-        editor.putInt("minute",str2);
-        editor.apply();
-        SharedPreferences clock2 = getSharedPreferences("clock2", 0);
-        SharedPreferences.Editor editor2 = clock2.edit();
-
-        editor2.putInt("hour",str3);
-        editor2.putInt("minute",str4);
-        editor2.apply();
-        SharedPreferences clock3 = getSharedPreferences("clock1", 0);
-        SharedPreferences.Editor editor3 = clock3.edit();
-
-        editor3.putInt("hour",str5);
-        editor3.putInt("minute",str6);
-        editor3.apply();
-        SharedPreferences clock4 = getSharedPreferences("clock1", 0);
-        SharedPreferences.Editor editor4 = clock4.edit();
-
-        editor4.putInt("hour",str7);
-        editor4.putInt("minute",str8);
-        editor4.apply();*/
     }
 
     private String format(int x) {

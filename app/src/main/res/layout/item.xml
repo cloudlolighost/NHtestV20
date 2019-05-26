@@ -14,7 +14,7 @@
         android:layout_centerVertical="true"
         android:layout_marginStart="3dp"
         android:contentDescription="@string/todo"
-        android:src="@drawable/iconfinder_Capsule_2415607" />
+        android:src="@drawable/iconfinder_capsule_2415607" />
 
     <TextView
         android:id="@+id/info_text"
