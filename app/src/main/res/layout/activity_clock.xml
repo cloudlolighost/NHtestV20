@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/yel"
     tools:context=".MainActivity">
 
     <DigitalClock
@@ -70,6 +71,7 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_weight="1"
+                android:background="@drawable/rectangle"
 
                 android:text="@string/str_button1"
                 android:textAlignment="center"
@@ -84,6 +86,7 @@
                 android:layout_marginTop="0dp"
                 android:layout_weight="1"
                 android:text="@string/str_button2"
+                android:background="@drawable/rectangle"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
@@ -124,6 +127,7 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_weight="1"
+                android:background="@drawable/rectangle"
 
                 android:text="@string/str_button1"
                 android:textAlignment="center"
@@ -137,6 +141,7 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_weight="1"
+                android:background="@drawable/rectangle"
                 android:text="@string/str_button2"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -176,6 +181,7 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_weight="1"
+                android:background="@drawable/rectangle"
 
                 android:text="@string/str_button1"
                 android:textAlignment="center"
@@ -189,6 +195,7 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_weight="1"
+                android:background="@drawable/rectangle"
                 android:text="@string/str_button2"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
@@ -228,6 +235,7 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_weight="1"
+                android:background="@drawable/rectangle"
 
                 android:text="@string/str_button1"
                 android:textAlignment="center"
@@ -241,6 +249,7 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_weight="1"
+                android:background="@drawable/rectangle"
                 android:text="@string/str_button2"
                 android:textColor="@color/black"
                 android:textSize="24sp" />

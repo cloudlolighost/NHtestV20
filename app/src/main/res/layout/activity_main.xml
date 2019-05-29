@@ -15,9 +15,9 @@
         android:layout_alignTop="@+id/toolbar"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="56dp"
+        android:layout_marginStart="58dp"
         android:layout_marginTop="84dp"
-        android:layout_marginEnd="62dp"
+        android:layout_marginEnd="60dp"
         android:text="@string/title"
         android:textAlignment="center"
         android:textSize="36sp"
@@ -45,7 +45,7 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="543dp"
+        android:layout_height="match_parent"
         android:layout_alignTop="@+id/toolbar"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -71,7 +71,7 @@
                 android:contentDescription="@string/clock"
                 app:srcCompat="@drawable/iconfinder_general_office_43_2530809" />
 
-            
+
             <ImageButton
                 android:id="@+id/list"
                 android:layout_width="match_parent"
@@ -79,8 +79,8 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_weight="1"
-                android:contentDescription="@string/list"
                 android:background="@drawable/rectangle"
+                android:contentDescription="@string/list"
                 app:srcCompat="@drawable/iconfinder_document_03_1622833" />
         </TableRow>
 
@@ -96,8 +96,8 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_weight="1"
-                android:contentDescription="@string/qrcode"
                 android:background="@drawable/rectangle"
+                android:contentDescription="@string/qrcode"
                 app:srcCompat="@drawable/iconfinder_qrcode_1608801" />
 
             <ImageButton
@@ -113,5 +113,18 @@
                 app:srcCompat="@drawable/iconfinder_calendar_299092" />
         </TableRow>
     </TableLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="81dp"
+        android:layout_height="69dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignEnd="@+id/Title"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="233dp"
+        app:srcCompat="@drawable/md2_burned"
+        android:contentDescription="@string/logol" />
 
 </RelativeLayout>

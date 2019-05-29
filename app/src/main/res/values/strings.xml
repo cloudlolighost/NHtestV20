@@ -20,6 +20,11 @@
     <string name="fix">修改</string>
     <string name="add">新增</string>
     <string name="home">home</string>
+    <string name="logol">TODO</string>
+    <string name="clockset">鬧鐘設定</string>
+    <string name="mdlist">藥物清單</string>
+    <string name="calender">簽到</string>
+    <string name="scan">QRcode掃描</string>
 
 
 </resources>

@@ -150,6 +150,7 @@ public class clock extends AppCompatActivity {
                                 c.set(Calendar.SECOND, 0);
                                 c.set(Calendar.MILLISECOND, 0);
 
+
                                 // 指定鬧钟設置的時間到時，要運行的CallAlarm.class
                                 Intent intent = new Intent(
                                         clock.this, CallAlarm.class);

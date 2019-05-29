@@ -95,8 +95,6 @@ public class QRcode extends AppCompatActivity {
             super.onActivityResult(requestCode, resultCode, data);
         }
 
-
-
     }
     }
 
