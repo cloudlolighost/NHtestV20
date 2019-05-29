@@ -70,7 +70,6 @@
                 android:background="@drawable/rectangle"
                 android:contentDescription="@string/clock"
                 app:srcCompat="@drawable/iconfinder_general_office_43_2530809" />
-
             <ImageButton
                 android:id="@+id/list"
                 android:layout_width="match_parent"
