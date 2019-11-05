@@ -14,7 +14,10 @@
 .. _Git: http://git-scm.com/
 .. _Mercurial: https://www.mercurial-scm.org/
 .. _GitHub: http://github.com/rtfd/readthedocs.org
+.. py:function:: enumerate(sequence[, start=0])
 
+   Return an iterator that yields tuples of an index and an item of the
+   *sequence*. (And so on.)
 網站的主要文件分為幾個部分︰
 
 * :ref:`user-docs`
