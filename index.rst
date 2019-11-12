@@ -1,4 +1,4 @@
-歡迎來到 Read The Do
+歡迎來到 Read The Docs
 ========================
 `Read the Docs`_ 是託管於 `GitHub`_ 開源專案。它支援使用 reStructuredText_ 編輯的 Sphinx_ 文件，您可以從 Subversion_、 Bazaar_、Git_ 和 Mercurial_ 倉庫中 pull，重新編輯後再交回託管。xaxa_
 
